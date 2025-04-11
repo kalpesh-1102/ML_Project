@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="form-page">
+  <div class="container">
+    <h2>📋 Enter Student Information</h2>
+    <form method="POST">
+
+      <label>Gender:</label>
+      <select name="gender" required>
+        <option disabled selected value="">-- Select --</option>
+        <option>male</option>
+        <option>female</option>
+      </select>
+
+      <label>Race / Ethnicity:</label>
+      <select name="ethnicity" required>
+        <option disabled selected value="">-- Select --</option>
+        <option>group A</option>
+        <option>group B</option>
+        <option>group C</option>
+        <option>group D</option>
+        <option>group E</option>
+      </select>
+
+      <label>Parental Level of Education:</label>
+      <select name="parental_level_of_education" required>
+        <option disabled selected value="">-- Select --</option>
+        <option>associate's degree</option>
+        <option>bachelor's degree</option>
+        <option>high school</option>
+        <option>master's degree</option>
+        <option>some college</option>
+        <option>some high school</option>
+      </select>
+
+      <label>Lunch:</label>
+      <select name="lunch" required>
+        <option disabled selected value="">-- Select --</option>
+        <option>free/reduced</option>
+        <option>standard</option>
+      </select>
+
+      <label>Test Preparation Course:</label>
+      <select name="test_preparation_course" required>
+        <option disabled selected value="">-- Select --</option>
+        <option>none</option>
+        <option>completed</option>
+      </select>
+
+      <label>Writing Score (out of 100):</label>
+      <input type="number" name="reading_score" required min="0" max="100">
+
+      <label>Reading Score (out of 100):</label>
+      <input type="number" name="writing_score" required min="0" max="100">
+
+      <input type="submit" value="🔮 Predict Score">
+    </form>
+
+    {% if results %}
+    <div class="result">
+      <h3>📈 Predicted Maths Score:</h3>
+      <span>{{ results }}</span>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>

@@ -31,7 +31,7 @@ class DataIngestion:
 
         try:
             # Load the CSV file into a pandas DataFrame
-            df = pd.read_csv("notebook\\data\\stud.csv")
+            df = pd.read_csv("notebook/data/stud.csv")
             logging.info("Dataset loaded into dataframe.")
 
             # Ensure the 'artifacts' directory exists before saving files
